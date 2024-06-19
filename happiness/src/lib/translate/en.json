@@ -1,0 +1,35 @@
+{
+  "translation": {
+         "title": "Child happiness",
+         "firstHeaderTab": "About us",
+         "secondHeaderTab": "Become a member",
+         "filter": "Filter"
+        },
+    "products": {
+      "createForm": {
+        "name": "Name",
+        "price": "Price",
+        "merchantQuestion": "What information do you need to carry out the subscription?",
+        "merchantQuestionHelperText": "All buyers will be required to answer this question before checkout",
+        "addressQuestion": "Do you need the buyer address?",
+        "yes": "Yes",
+        "no": "No",
+        "recurrences": "Recurrences",
+        "times": "times",
+        "period": "Period",
+        "each": "each",
+        "upload": "Upload picture",
+        "week": "week",
+        "month": "month",
+        "addPeriods": "Add periods",
+        "submit": "Create Product"
+      }
+    },
+    "validations": {
+      "required": "Required",
+      "minLength": "is too short (minimum is {{count}} characters)",
+      "maxLength": "is too long (maximum is {{count}} characters)",
+      "min": "must not be less than {{count}}",
+      "max": "must not be greater than {{count}}"
+    }
+  }
