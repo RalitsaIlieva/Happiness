@@ -6,26 +6,25 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 
-const FilterList = () => {
-  const [checked, setChecked] = useState([0]);
-
+const FilterList = (organisations) => {
+  const [checked, setChecked] = useState(organisations);
   const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+    const currentIndex = Object.values(checked).indexOf(value);
+
+    const newChecked = [...Object.values(checked)];
 
     if (currentIndex === -1) {
       newChecked.push(value);
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
     setChecked(newChecked);
   };
 
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+      {["language", "dance"].map((value) => {
+        const labelId = { value };
 
         return (
           <ListItem key={value} disablePadding>
@@ -33,13 +32,13 @@ const FilterList = () => {
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  checked={checked.indexOf(value) !== -1}
+                  checked={Object.values(checked).indexOf(value) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={`${value}`} />
             </ListItemButton>
           </ListItem>
         );

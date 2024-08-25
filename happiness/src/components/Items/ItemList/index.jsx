@@ -58,7 +58,7 @@ const Loading = () => (
 );
 
 const ItemTable = ({ itemTypeId }) => {
-  const { data, loading } = useOnSnapshot({ path: ['itemTypes', itemTypeId, 'items'] });
+  const { data, loading } = useOnSnapshot({ path: ['organisations', itemTypeId] });
 
   return (
     <Table>

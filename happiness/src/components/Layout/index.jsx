@@ -57,7 +57,7 @@ const Layout = () => {
       {/* {isMobile ? (
         <MuiAppBar position="fixed">{toolbar}</MuiAppBar>
       ) : (*/}
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{width: "100%"}}>
          {toolbar}
         </AppBar>
     {/*  )}

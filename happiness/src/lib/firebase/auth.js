@@ -29,14 +29,15 @@ export const useAuth = () => {
 
 export const useEnsureAuth = () => {
   const auth = getAuth();
+  // const user = auth.currentUser;
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        const provider = new GoogleAuthProvider();
-        signInWithRedirect(auth, provider);
-      }
-    });
-    return unsubscribe;
-  }, [auth]);
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       const provider = new GoogleAuthProvider();
+  //       // signInWithRedirect(auth, provider);
+  //     }
+  //   });
+  //   return unsubscribe;
+  // }, [auth]);
 };
