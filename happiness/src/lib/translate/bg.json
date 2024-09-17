@@ -1,7 +1,19 @@
-{ "translation": {
+{
+  "translation": {
     "title": "Детско щастие",
     "firstHeaderTab": "За нас",
     "secondHeaderTab": "Стани член",
-    "filter":"Филтрирай"
- }
+    "filter": "Филтрирай",
+    "name": "Име",
+    "email": "Email",
+    "question": "Съобщение",
+    "submitButton": "Изпрати",
+    "fail": "Нещо се обърка",
+    "success": "Вашето съобщение е изпратено успешно!",
+    "becomeMemberText": "Ако искате да станете член, моля, свържете се с нас чрез следната форма за контакт"
+  },
+  "validations": {
+    "required": "Това поле е задължително",
+    "minLength": "Минималната дължина е {{number}} символа"
+  }
 }
