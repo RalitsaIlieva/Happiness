@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Happiness/static/css/main.f00e9bbb.css",
+    "main.js": "/Happiness/static/js/main.fed20d75.js",
+    "static/js/787.8a2d38b3.chunk.js": "/Happiness/static/js/787.8a2d38b3.chunk.js",
+    "index.html": "/Happiness/index.html",
+    "main.f00e9bbb.css.map": "/Happiness/static/css/main.f00e9bbb.css.map",
+    "main.fed20d75.js.map": "/Happiness/static/js/main.fed20d75.js.map",
+    "787.8a2d38b3.chunk.js.map": "/Happiness/static/js/787.8a2d38b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f00e9bbb.css",
+    "static/js/main.fed20d75.js"
+  ]
+}
