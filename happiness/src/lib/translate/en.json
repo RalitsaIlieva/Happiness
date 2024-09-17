@@ -1,35 +1,39 @@
 {
   "translation": {
-         "title": "Child happiness",
-         "firstHeaderTab": "About us",
-         "secondHeaderTab": "Become a member",
-         "filter": "Filter"
-        },
-    "products": {
-      "createForm": {
-        "name": "Name",
-        "price": "Price",
-        "merchantQuestion": "What information do you need to carry out the subscription?",
-        "merchantQuestionHelperText": "All buyers will be required to answer this question before checkout",
-        "addressQuestion": "Do you need the buyer address?",
-        "yes": "Yes",
-        "no": "No",
-        "recurrences": "Recurrences",
-        "times": "times",
-        "period": "Period",
-        "each": "each",
-        "upload": "Upload picture",
-        "week": "week",
-        "month": "month",
-        "addPeriods": "Add periods",
-        "submit": "Create Product"
-      }
-    },
-    "validations": {
-      "required": "Required",
-      "minLength": "is too short (minimum is {{count}} characters)",
-      "maxLength": "is too long (maximum is {{count}} characters)",
-      "min": "must not be less than {{count}}",
-      "max": "must not be greater than {{count}}"
+    "title": "Child happiness",
+    "firstHeaderTab": "About us",
+    "secondHeaderTab": "Become a member",
+    "filter": "Filter",
+    "name": "Name",
+    "email": "Email",
+    "question": "Message",
+    "submitButton": "Send",
+    "fail": "Something went wrong!",
+    "success": "Your message is sent successfully!",
+    "becomeMemberText": "If you want to become a member, please, contact us via the following contact form"
+  },
+  "validations": {
+    "required": "This field is obligatory",
+    "minLength": "The minimum length is {{number}} symbols"
+  },
+  "products": {
+    "createForm": {
+      "name": "Name",
+      "price": "Price",
+      "merchantQuestion": "What information do you need to carry out the subscription?",
+      "merchantQuestionHelperText": "All buyers will be required to answer this question before checkout",
+      "addressQuestion": "Do you need the buyer address?",
+      "yes": "Yes",
+      "no": "No",
+      "recurrences": "Recurrences",
+      "times": "times",
+      "period": "Period",
+      "each": "each",
+      "upload": "Upload picture",
+      "week": "week",
+      "month": "month",
+      "addPeriods": "Add periods",
+      "submit": "Create Product"
     }
   }
+}
