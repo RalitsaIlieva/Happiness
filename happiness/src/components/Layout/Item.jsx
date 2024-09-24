@@ -28,13 +28,13 @@ const Item = () => {
   if (!data) return null;
 
   return (
-    <Card elevation={0}>
+    <Card elevation={0} sx={{marginTop: "20px"}}>
       <CardHeader title={data.name} sx={{marginTop: "10px"}} align="center"/>
       <Grid container justifyContent="center">
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3}>
           <CardMedia component="img" height="250" image={data.picture} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Box>
           <CardContent>
             <Typography variant="body2" sx={{ color: 'text.secondary' }} align='center'>

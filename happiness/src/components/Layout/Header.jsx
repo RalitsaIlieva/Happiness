@@ -5,9 +5,10 @@ import Tab from '@mui/material/Tab';
 import { useTranslation } from 'react-i18next';
 import LanguageSelect from './LanguageSelect';
 import { Link } from 'react-router-dom';
+import theme from '../../lib/theme';
 
 const tabSX = {
-  color: 'rgb(127,255,212)',
+  color: theme.palette.secondary.main,
   '&:hover': {
     border: '1px solid #00FF00',
     backgroundColor: 'rgb(186, 85, 211)',
@@ -33,7 +34,7 @@ const Header = () => {
         color="secondary"
         variant="h6"
         component={Link}
-        to="/"
+        to="/Happiness"
         sx={{ ml: 2, flexGrow: 1, textDecoration: 'none' }}
       >
         {t('title')}
@@ -43,6 +44,12 @@ const Header = () => {
         onChange={handleChange}
         selectionFollowsFocus    
         textColor="secondary"
+        TabIndicatorProps={{ sx: { display: 'none' } }}
+        sx={{
+          '& .MuiTabs-flexContainer': {
+            flexWrap: 'wrap',
+          },
+        }}
       >
         <Tab label={t('firstHeaderTab')} component={Link} to="/about" sx={tabSX} />
         <Tab label={t('secondHeaderTab')} component={Link} to="/membership" sx={tabSX} />

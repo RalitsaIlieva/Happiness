@@ -48,9 +48,9 @@ const Membership = () => {
       },
     );
   };
-  console.log(theme);
+
   return (
-    <>
+    <Box sx={{ marginTop: '35px' }}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} alignContent="center">
@@ -65,7 +65,7 @@ const Membership = () => {
             container
             direction="column"
             spacing={2}
-            sx={{ [theme.breakpoints.up('md')]: { marginTop: '4px' }}}
+            sx={{ [theme.breakpoints.up('md')]: { marginTop: '4px' } }}
           >
             <Grid item>
               <Controller
@@ -150,7 +150,7 @@ const Membership = () => {
           </Grid>
         </Grid>
       </form>
-    </>
+    </Box>
   );
 };
 

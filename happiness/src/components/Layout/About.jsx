@@ -1,5 +1,5 @@
 const About = () => {
-  return <div>About us page</div>;
+  return <div style={{marginTop: "30px"}}>About us page</div>;
 };
 
 export default About;

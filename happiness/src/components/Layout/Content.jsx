@@ -7,7 +7,7 @@ import Item from "./Item";
 
 const Content = () => (
   <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/Happiness" element={<Home />} />
     <Route path="/:id" element={<Item />} />
     <Route path="/about" element={<About />} />
     <Route path="/membership" element={<Membership />} />

@@ -7,7 +7,9 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import Grid from '@mui/material/Grid';
+import CircularProgress from '@mui/material/CircularProgress';
 import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -20,16 +22,18 @@ import Checkbox from '@mui/material/Checkbox';
 import Pagination from './OrganisationsPagination';
 
 const Home = () => {
-  const { data: organisations } = useGetDocs({ path: 'organisations' });
+  const { data: organisations, loading } = useGetDocs({ path: 'organisations' });
   const [openFilter, setOpenFilter] = useState(false);
   const [checked, setChecked] = useState([]);
   const [filtered, setFiltered] = useState(organisations);
   const [currentPage, setCurrentPage] = useState(1);
   const { t } = useTranslation('translation');
   const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const navigate = useNavigate();
 
-  if (!organisations) return null;
+  if (loading) return <CircularProgress />;
 
   const organisationsPerPage = 4;
   const indexOfLastOrganisation = currentPage * organisationsPerPage;
@@ -53,13 +57,14 @@ const Home = () => {
   };
 
   let columnNumber;
-  if (theme.breakpoints.up('md')) {
+  if (isDesktop) {
     columnNumber = 4;
-  } else if (theme.breakpoints.up('sm')) {
+  } else if (isTablet) {
     columnNumber = 2;
   } else {
     columnNumber = 1;
   }
+
   const categories = [...new Set(organisations.map((o) => o.category))];
   const handleToggle = (value) => () => {
     const currentIndex = Object.values(checked).indexOf(value);
@@ -73,15 +78,17 @@ const Home = () => {
     setChecked(newChecked);
     setFiltered(organisations.filter((o) => newChecked.includes(o.category)));
   };
+
   return (
     <>
       <Button
         onClick={() => setOpenFilter(!openFilter)}
         startIcon={<FilterListIcon fontSize="large" />}
+        sx={!isDesktop && {marginTop: "30px"}}
       >
         {t('filter')}
       </Button>
-      <Grid container xs={12}>
+      <Grid container>
         {openFilter && (
           <List
             sx={{ bgcolor: 'background.paper', [theme.breakpoints.up('md')]: { display: 'flex' } }}
@@ -111,7 +118,6 @@ const Home = () => {
           <Grid item>
             <ImageList
               sx={{
-                // gap: (theme) => theme.spacing(1),
                 overflow: 'auto',
                 scrollbarWidth: 'none',
                 '&::-webkit-scrollbar': {
